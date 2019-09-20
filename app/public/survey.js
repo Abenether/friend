@@ -30,15 +30,10 @@ var config = {
 
 
 
-// Capture the form inputs
-
 $("#submit").on("click", (event) => {
 
     event.preventDefault();
 
-
-
-    // Create an object for the user"s data
 
     var userData = {
 
@@ -74,13 +69,8 @@ $("#submit").on("click", (event) => {
 
 
 
-    // AJAX post the data to the friends API.
 
     $.post("/api/friends", userData, (data) => {
-
-
-
-        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
 
         $("#match-name").text(data.name);
 
@@ -88,7 +78,6 @@ $("#submit").on("click", (event) => {
 
 
 
-        // Show the modal with the best match
 
         $("#results-modal").modal("toggle");
 
